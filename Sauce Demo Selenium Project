@@ -1,0 +1,103 @@
+// Sauce Demo Selenium Project
+
+package SauceDemo_Project;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.JavascriptExecutor;
+
+public class SauceDemo_SelProject 
+{
+     public static void main(String[] args) throws Exception
+	{
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dell\\Documents\\AUTOMATION TESTING\\BROWSER EXTENSION\\chromedriver.exe");
+	    
+		//create object WebDriver With ChromeDriver
+		
+		WebDriver driver = new ChromeDriver();
+		
+		//Maximize Window
+		driver.manage().window().maximize();
+		
+		//URL
+		  driver.get("https://www.saucedemo.com/");
+	      Thread.sleep(2000);
+	      
+	      //UserName
+	      driver.findElement(By.xpath("//input[@placeholder='Username']")).sendKeys("standard_user");
+	      Thread.sleep(2000);
+	      
+	      //Password
+	      driver.findElement(By.xpath("//input[@id='password']")).sendKeys("secret_sauce");
+	      Thread.sleep(2000);
+	      
+	      //Login Button
+	      driver.findElement(By.xpath("//input[@name='login-button']")).click();
+	      Thread.sleep(2000);
+	      
+	      //Three Lines
+	      driver.findElement(By.xpath("//button[@id='react-burger-menu-btn']")).click();
+	      Thread.sleep(2000);
+	      
+	      //Cross Sign
+	      driver.findElement(By.xpath("//*[@id=\"react-burger-cross-btn\"]")).click();
+	      Thread.sleep(2000);
+	      
+	       //Scroll
+		   //Step1: create object of javascriptExecuter
+		  JavascriptExecutor js=(JavascriptExecutor)driver;
+	      
+	      //way1: Scrolling using pixel
+		  js.executeScript("window.scrollBy(0,300)");
+		  Thread.sleep(2000);
+		      
+		  js.executeScript("window.scrollBy(0,-300)");
+		  Thread.sleep(2000); 
+	      	      
+	      //Add to Cart 
+	      driver.findElement(By.xpath("//*[@id=\"add-to-cart-sauce-labs-backpack\"]")).click();
+	      Thread.sleep(2000);
+	      
+	      //Cart Bag 
+	      driver.findElement(By.xpath("//*[@id=\"shopping_cart_container\"]")).click();
+	      Thread.sleep(2000);
+	      
+	      //Checkout  
+	      driver.findElement(By.xpath("//*[@id=\"checkout\"]")).click();
+	      Thread.sleep(2000);
+	      
+	      //First Name 
+	      driver.findElement(By.xpath("//*[@id=\"first-name\"]")).sendKeys("Manisha");
+	      Thread.sleep(2000);
+	      
+	      //Last Name 
+	      driver.findElement(By.xpath("//*[@id=\"last-name\"]")).sendKeys("Jagtap");
+	      Thread.sleep(2000);
+	      
+	      //Zip Code 
+	      driver.findElement(By.xpath("//*[@id=\"postal-code\"]")).sendKeys("421302");
+	      Thread.sleep(2000);
+	      
+	      //Continue Button 
+	      driver.findElement(By.xpath("//*[@id=\"continue\"]")).click();
+	      Thread.sleep(2000);
+	      
+	      //Finish Button 
+	      driver.findElement(By.xpath("//*[@id=\"finish\"]")).click();
+	      Thread.sleep(2000);
+	      
+	      //Back to Home Button 
+	      driver.findElement(By.xpath("//*[@id=\"back-to-products\"]")).click();
+	      Thread.sleep(2000);
+	      
+	       //Three Lines
+	      driver.findElement(By.xpath("//button[@id='react-burger-menu-btn']")).click();
+	      Thread.sleep(2000);
+	      
+	      //Logout
+	      driver.findElement(By.xpath("//a[@id='logout_sidebar_link']")).click();
+	      Thread.sleep(2000);
+	      
+       }
+   }
